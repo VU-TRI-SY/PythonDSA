@@ -1,0 +1,17 @@
+Array: bao gồm các cell nằm liền kề nhau (continuos) và có cùng size
+Vì các cell nằm liền kề nhau nên ta có thể dùng index để access vào trong các element của 
+Array mà chỉ mất O(1)
+--> hạn chế: nếu memory không còn đủ space cho một array có size N --> không thể tạo
+ra (cấp phát) bộ nhớ cho array cần tạo
+
+
+Linked list: bao gồm một list các Node nằm rải rác (bất kỳ đâu) ở trong memory
+--> khắc phục hạn chế của array: Nếu linked list có tổng size là N thì không cần một 
+segment (space) trên Ram đủ size N mà ta chỉ cần tạo ra các Node nằm bất kỳ đâu đó ở trên Ram
+và link chúng lại thành 1 linked list
+hạn chế: việc insert hay access vào list mất O(n)
+vì ta phải bắt đầu từ head của list và traverse qua n Node sau đó mới có thể lấy ra hoặc insert
+một element vào list
+
+insert: to head, tail --> O(1)
+           middle: O(n) --> n steps to find the position to insert and O(1) to insert

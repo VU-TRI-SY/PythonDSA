@@ -1,0 +1,22 @@
+class Brace
+def merge(self, b1):
+    tp1  = b1.head
+    tp2 = self.head
+    while tp1 is not None and tp2 is not None:
+        if tp2.next_node is None: #tp2 is the tail of list2
+            tp2.next_node = tp1
+            tp1.prev_node = tp2
+            self.tail = b1.tail
+            break
+        else:
+            cur = tp1
+            tp1 = tp1.next_node
+            cur.prev_node = tp2
+            cur.next_node = tp2.next_node
+            (tp2.next_node).prev_node = cur
+            tp2.next_node = cur
+            tp2 = tp2.next_node.next_node
+    b1.head = b1.tail = None
+
+
+    
